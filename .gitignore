@@ -1,0 +1,125 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------------------
+# Node modules (React)
+# -------------------------------
+frontend/node_modules/
+frontend/build/
+
+# -------------------------------
+# Python
+# -------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# -------------------------------
+# Virtual Environment
+# -------------------------------
+venv/
+.env/
+
+# -------------------------------
+# Logs (VERY IMPORTANT)
+# -------------------------------
+*.log
+alerts.log
+
+# -------------------------------
+# OS files
+# -------------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------------
+# VS Code
+# -------------------------------
+.vscode/
+
+# -------------------------------
+# Environment variables
+# -------------------------------
+.env
+.env.local
+.env.development
+.env.production
+
+# -------------------------------
+# Sensitive / future credentials
+# -------------------------------
+config.json
+secrets.json
+*.key
+*.pem
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs
+logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build folders
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# Python (if used)
+__pycache__/
+*.pyc
+
+# Database files
+*.sqlite
+*.db
+
+# Security sensitive files
+*.pem
+*.key
+
+# Parrot / Linux temp
+*.swp
+
+# Python virtual environment
+venv/
+backend/venv/
+
+# Logs
+*.log
+
+node_modules/
+frontend/node_modules/
