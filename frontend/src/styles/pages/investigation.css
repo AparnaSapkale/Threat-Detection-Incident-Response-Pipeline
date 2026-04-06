@@ -1,0 +1,76 @@
+/* Page */
+.investigation {
+  padding: 20px;
+}
+
+/* Title */
+.investigation-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Summary Box */
+.investigation-summary {
+  background-color: #1f2937;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Summary Text */
+.summary-item {
+  margin-bottom: 8px;
+  color: #d1d5db;
+}
+
+/* Table Wrapper */
+.investigation-table {
+  background-color: #1f2937;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+/* Table */
+.investigation-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header */
+.investigation-table th {
+  padding: 10px;
+  color: #9ca3af;
+  border-bottom: 1px solid #374151;
+}
+
+/* Rows */
+.investigation-table td {
+  padding: 10px;
+  border-top: 1px solid #374151;
+}
+
+/* Hover */
+.investigation-table tr:hover {
+  background-color: #374151;
+}
+
+/* Severity */
+.inv-high {
+  color: #f87171;
+  font-weight: bold;
+}
+
+.inv-medium {
+  color: #fbbf24;
+  font-weight: bold;
+}
+
+.inv-low {
+  color: #34d399;
+}
+
+/* Loading */
+.loading {
+  color: #9ca3af;
+}

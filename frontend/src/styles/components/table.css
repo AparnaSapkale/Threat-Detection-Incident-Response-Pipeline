@@ -1,0 +1,120 @@
+/* Table Container */
+.table-container {
+  background-color: #1f2937;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Search Input */
+.table-search {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+  width: 250px;
+}
+
+/* Table */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header */
+.custom-table thead {
+  background-color: #111827;
+}
+
+.custom-table th {
+  padding: 12px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Rows */
+.custom-table td {
+  padding: 12px;
+  border-top: 1px solid #374151;
+  color:#c8e6e8;
+}
+
+/* Hover Effect */
+.custom-table tbody tr:hover {
+  background-color: #374151;
+  transition: 0.2s;
+}
+
+/* Clickable IP */
+.ip-link {
+  cursor: pointer;
+}
+
+.ip-link:hover {
+  text-decoration: underline;
+  color: #60a5fa;
+}
+
+/* Severity */
+.severity-high {
+  color: #f87171;
+  font-weight: bold;
+}
+
+.severity-warning {
+  color: #fbbf24;
+  font-weight: bold;
+}
+
+.severity-low {
+  color: #34d399;
+}
+
+/* Risk */
+.risk-high {
+  color: #ef4444;
+}
+
+.risk-medium {
+  color: #facc15;
+}
+
+.risk-low {
+  color: #22c55e;
+}
+
+/* incident table css  */
+/* Buttons */
+.btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.btn-close {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-block {
+  background-color: #111827;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Status */
+.status-open {
+  color: #f87171;
+  font-weight: bold;
+}
+
+.status-closed {
+  color: #34d399;
+  font-weight: bold;
+}

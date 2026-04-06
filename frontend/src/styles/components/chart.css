@@ -1,0 +1,21 @@
+/* Chart Card */
+.chart-container {
+  background-color: #1f2937;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+/* Center chart */
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+}

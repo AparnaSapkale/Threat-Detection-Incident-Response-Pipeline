@@ -1,0 +1,35 @@
+/* Navbar Container */
+.navbar {
+  background-color: #111827;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #374151;
+}
+
+/* Title */
+.navbar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Status */
+.system-status {
+  font-size: 14px;
+  color: #34d399;
+}
+
+/* Placeholder profile */
+.user {
+  font-size: 14px;
+  color: #9ca3af;
+}
