@@ -1,120 +1,252 @@
-/* Table Container */
-.table-container {
-  background-color: #1f2937;
-  padding: 20px;
-  border-radius: 12px;
+/* .table-container {
+  overflow-x: auto;
 }
 
-/* Search Input */
-.table-search {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  margin-bottom: 15px;
-  width: 250px;
-}
-
-/* Table */
 .custom-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-/* Header */
-.custom-table thead {
-  background-color: #111827;
-}
-
 .custom-table th {
-  padding: 12px;
-  color: #ffffff;
-  font-weight: 600;
+  text-align: left;
+  padding: 14px;
+  color: #94a3b8;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Rows */
 .custom-table td {
-  padding: 12px;
-  border-top: 1px solid #374151;
-  color:#c8e6e8;
+  padding: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Hover Effect */
-.custom-table tbody tr:hover {
-  background-color: #374151;
-  transition: 0.2s;
+.custom-table tr:hover {
+  background: rgba(255,255,255,0.03);
 }
 
-/* Clickable IP */
-.ip-link {
-  cursor: pointer;
-}
-
-.ip-link:hover {
-  text-decoration: underline;
-  color: #60a5fa;
-}
-
-/* Severity */
-.severity-high {
-  color: #f87171;
+.severity-badge,
+.status-badge {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
   font-weight: bold;
+}
+
+.severity-high {
+  background: rgba(255, 0, 0, 0.15);
+  color: #ff5c5c;
 }
 
 .severity-warning {
-  color: #fbbf24;
-  font-weight: bold;
+  background: rgba(255, 166, 0, 0.15);
+  color: #ffb84d;
 }
 
-.severity-low {
-  color: #34d399;
-}
-
-/* Risk */
-.risk-high {
-  color: #ef4444;
-}
-
-.risk-medium {
-  color: #facc15;
-}
-
-.risk-low {
-  color: #22c55e;
-}
-
-/* incident table css  */
-/* Buttons */
-.btn {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-size: 12px;
-  margin-right: 6px;
-}
-
-.btn-close {
-  background-color: #ef4444;
-  color: white;
-}
-
-.btn-block {
-  background-color: #111827;
-  color: white;
-}
-
-.btn:hover {
-  opacity: 0.85;
-}
-
-/* Status */
 .status-open {
-  color: #f87171;
-  font-weight: bold;
+  background: rgba(255, 0, 0, 0.15);
+  color: #ff5c5c;
 }
 
 .status-closed {
-  color: #34d399;
+  background: rgba(0, 255, 170, 0.15);
+  color: #35d07f;
+} */
+
+/* Table */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Head */
+
+.custom-table th {
+  text-align: left;
+
+  padding: 14px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  text-transform: uppercase;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Body */
+
+.custom-table td {
+  padding: 16px 14px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+
+  vertical-align: middle;
+}
+
+.custom-table tr:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* Incident ID */
+
+.incident-id {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+/* IP */
+
+.ip-link {
+  color: #38bdf8;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.ip-link:hover {
+  color: #7dd3fc;
+}
+
+/* Attack Tags */
+
+.attack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.attack-tag {
+  background: rgba(255,255,255,0.05);
+
+  color: #cbd5e1;
+
+  padding: 5px 10px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+}
+
+/* Badges */
+
+.severity-badge,
+.status-badge {
+  padding: 6px 10px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
   font-weight: bold;
+}
+
+/* Severity */
+
+.severity-high {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+}
+
+.severity-medium {
+  background: rgba(245,158,11,0.15);
+  color: #f59e0b;
+}
+
+.severity-low {
+  background: rgba(16,185,129,0.15);
+  color: #10b981;
+}
+
+/* Status */
+
+.status-open {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+}
+
+.status-closed {
+  background: rgba(16,185,129,0.15);
+  color: #10b981;
+}
+
+/* Alerts */
+
+.alert-count {
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+/* Timeline */
+
+.timeline-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  font-size: 13px;
+
+  color: #94a3b8;
+}
+
+/* Buttons */
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  border: none;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.btn-close {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+}
+
+.btn-close:hover {
+  background: rgba(239,68,68,0.25);
+}
+
+.btn-block {
+  background: rgba(59,130,246,0.15);
+  color: #60a5fa;
+}
+
+.btn-block:hover {
+  background: rgba(59,130,246,0.25);
+}
+
+/* Resolved */
+
+.resolved-text {
+  color: #10b981;
+  font-weight: 600;
+}
+
+/* Empty */
+
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
 }

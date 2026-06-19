@@ -1,16 +1,16 @@
-/* Page */
+/* Page
 .investigation {
   padding: 20px;
 }
 
-/* Title */
+/* Title * 
 .investigation-title {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-/* Summary Box */
+/* Summary Box *  
 .investigation-summary {
   background-color: #1f2937;
   padding: 15px;
@@ -18,44 +18,44 @@
   margin-bottom: 20px;
 }
 
-/* Summary Text */
+/* Summary Text * 
 .summary-item {
   margin-bottom: 8px;
   color: #d1d5db;
 }
 
-/* Table Wrapper */
+/* Table Wrapper * 
 .investigation-table {
   background-color: #1f2937;
   padding: 15px;
   border-radius: 12px;
 }
 
-/* Table */
+/* Table * 
 .investigation-table table {
   width: 100%;
   border-collapse: collapse;
 }
 
-/* Header */
+/* Header * 
 .investigation-table th {
   padding: 10px;
   color: #9ca3af;
   border-bottom: 1px solid #374151;
 }
 
-/* Rows */
+/* Rows * 
 .investigation-table td {
   padding: 10px;
   border-top: 1px solid #374151;
 }
 
-/* Hover */
+/* Hover * 
 .investigation-table tr:hover {
   background-color: #374151;
 }
 
-/* Severity */
+/* Severity * 
 .inv-high {
   color: #f87171;
   font-weight: bold;
@@ -70,7 +70,246 @@
   color: #34d399;
 }
 
-/* Loading */
+/* Loading * 
 .loading {
   color: #9ca3af;
+} */
+
+.investigation-page {
+  color: white;
+}
+
+/* Header */
+
+.investigation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.investigation-header h1 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.investigation-header p {
+  color: #94a3b8;
+}
+
+.target-ip {
+  background: rgba(59,130,246,0.15);
+
+  border: 1px solid rgba(59,130,246,0.3);
+
+  color: #60a5fa;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+}
+
+/* Stats */
+
+.investigation-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+.inv-card {
+  background: linear-gradient(
+    145deg,
+    rgba(15, 25, 45, 0.95),
+    rgba(10, 18, 32, 0.95)
+  );
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.inv-card h3 {
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.inv-card h1 {
+  font-size: 36px;
+}
+
+.high-card {
+  border-left: 4px solid #ef4444;
+}
+
+.medium-card {
+  border-left: 4px solid #f59e0b;
+}
+
+.low-card {
+  border-left: 4px solid #10b981;
+}
+
+/* Summary */
+
+.summary-card {
+  background: linear-gradient(
+    145deg,
+    rgba(15, 25, 45, 0.95),
+    rgba(10, 18, 32, 0.95)
+  );
+
+  border-radius: 14px;
+
+  padding: 22px;
+
+  margin-bottom: 24px;
+
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.summary-card h2 {
+  margin-bottom: 20px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.summary-label {
+  display: block;
+
+  color: #94a3b8;
+
+  margin-bottom: 6px;
+
+  font-size: 14px;
+}
+
+.threat-score {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+/* Table */
+
+.investigation-table-card {
+  background: linear-gradient(
+    145deg,
+    rgba(15, 25, 45, 0.95),
+    rgba(10, 18, 32, 0.95)
+  );
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.table-header {
+  margin-bottom: 16px;
+}
+
+.investigation-table {
+  overflow-x: auto;
+}
+
+.investigation-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.investigation-table th,
+.investigation-table td {
+  padding: 14px;
+  text-align: left;
+}
+
+.investigation-table th {
+  color: #94a3b8;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.investigation-table td {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Badges */
+
+.severity-badge,
+.status-badge {
+  padding: 6px 10px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: bold;
+}
+
+.severity-high {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+}
+
+.severity-medium {
+  background: rgba(245,158,11,0.15);
+  color: #f59e0b;
+}
+
+.severity-low {
+  background: rgba(16,185,129,0.15);
+  color: #10b981;
+}
+
+.status-badge {
+  background: rgba(59,130,246,0.15);
+  color: #60a5fa;
+}
+
+/* Loading */
+
+.loading {
+  padding: 20px;
+  color: #94a3b8;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+
+  .investigation-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .investigation-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .investigation-stats {
+    grid-template-columns: 1fr;
+  }
+
 }

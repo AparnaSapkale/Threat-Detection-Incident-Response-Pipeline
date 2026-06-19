@@ -1,219 +1,311 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "../styles/components/table.css";
 
 const IncidentTable = () => {
 
   const [incidents, setIncidents] = useState([]);
+
   const navigate = useNavigate();
 
+  /* Fetch Incidents */
+
   const fetchIncidents = async () => {
+
     try {
-      const res = await fetch("http://127.0.0.1:8000/incidents");
+
+      const res = await fetch(
+        "http://127.0.0.1:8001/incidents"
+      );
+
       const data = await res.json();
-      setIncidents(data);
+
+      setIncidents(Array.isArray(data) ? data : []);
+
     } catch (err) {
-      console.error("Error fetching incidents:", err);
+
+      console.error(
+        "Error fetching incidents:",
+        err
+      );
     }
   };
+
+  /* Close Incident */
 
   const closeIncident = async (id) => {
+
     try {
-      await fetch(`http://127.0.0.1:8000/incident/${id}/close`, {
-        method: "PUT",
-      });
+
+      await fetch(
+        `http://127.0.0.1:8001/incident/${id}/close`,
+        {
+          method: "PUT",
+        }
+      );
+
       fetchIncidents();
+
     } catch (err) {
-      console.error("Error closing incident:", err);
+
+      console.error(
+        "Error closing incident:",
+        err
+      );
     }
   };
 
-  useEffect(() => {
-    fetchIncidents();
-    const interval = setInterval(fetchIncidents, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  /* Block IP */
 
   const blockIP = async (ip) => {
+
     try {
-      await fetch(`http://127.0.0.1:8000/block_ip?ip=${ip}`, {
-        method: "POST",
-      });
+
+      await fetch(
+        `http://127.0.0.1:8001/block_ip?ip=${ip}`,
+        {
+          method: "POST",
+        }
+      );
+
       alert(`Blocked IP: ${ip}`);
+
     } catch (err) {
-      console.error("Error blocking IP:", err);
+
+      console.error(
+        "Error blocking IP:",
+        err
+      );
     }
   };
 
+  /* Auto Refresh */
+
+  useEffect(() => {
+
+    fetchIncidents();
+
+    const interval = setInterval(
+      fetchIncidents,
+      3000
+    );
+
+    return () => clearInterval(interval);
+
+  }, []);
+
+  /* Severity */
+
   const getSeverityClass = (severity) => {
-  return severity === "HIGH" ? "severity-high" : "severity-warning";
-};
-//   return (
-//     <div>
-//       <table border="1" cellPadding="10" style={{ width: "100%", textAlign: "center" }}>
-//         <thead>
-//           <tr>
-//             <th>ID</th>
-//             <th>IP</th>
-//             <th>Attack Types</th>
-//             <th>Severity</th>
-//             <th>Status</th>
-//             <th>Alert Count</th>
-//             <th>First Seen</th>
-//             <th>Last Seen</th>
-//             <th>Action</th>
-//           </tr>
-//         </thead>
 
-//         <tbody>
-//           {incidents.map((inc, index) => (
-//             <tr key={index}>
-//               <td>{inc._id}</td>
-//               <td
-//                 style={{ cursor: "pointer", color: "blue" }}
-//                 onClick={() => navigate(`/investigation/${inc.ip}`)}
-//               >
-//                 {inc.ip}
-//               </td>
-//               <td>{inc.attack_types.join(", ")}</td>
+    if (severity === "HIGH")
+      return "severity-high";
 
-//               <td
-//                 style={{
-//                   color: inc.severity === "HIGH" ? "red" : "orange",
-//                   fontWeight: "bold",
-//                 }}
-//               >
-//                 {inc.severity}
-//               </td>
+    if (severity === "MEDIUM")
+      return "severity-medium";
 
-//               <td
-//                 style={{
-//                   color: inc.status === "OPEN" ? "red" : "green",
-//                   fontWeight: "bold",
-//                 }}
-//               >
-//                 {inc.status === "OPEN" ? "🔴 OPEN" : "🟢 CLOSED"}
-//               </td>
+    return "severity-low";
+  };
 
-//               <td>{inc.alert_count}</td>
-//               <td>{inc.first_seen}</td>
-//               <td>{inc.last_seen}</td>
-
-//               <td>
-//                 {inc.status === "OPEN" && (
-//                   <>
-//                     <button
-//                       onClick={() => closeIncident(inc._id)}
-//                       style={{
-//                         marginRight: "5px",
-//                         padding: "5px",
-//                         backgroundColor: "#ff4d4d",
-//                         color: "white",
-//                         border: "none",
-//                       }}
-//                     >
-//                       Close
-//                     </button>
-
-//                     <button
-//                       onClick={() => blockIP(inc.ip)}
-//                       style={{
-//                         padding: "5px",
-//                         backgroundColor: "#333",
-//                         color: "white",
-//                         border: "none",
-//                       }}
-//                     >
-//                       Block IP
-//                     </button>
-//                   </>
-//                 )}
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// };
-
-// export default IncidentTable;
- return (
+  return (
     <div className="table-container">
+
       <table className="custom-table">
+
         <thead>
+
           <tr>
-            <th>ID</th>
-            <th>IP</th>
-            <th>Attack Types</th>
+            <th>Incident</th>
+            <th>Source IP</th>
+            <th>Attack Type</th>
             <th>Severity</th>
             <th>Status</th>
-            <th>Alert Count</th>
-            <th>First Seen</th>
-            <th>Last Seen</th>
-            <th>Action</th>
+            <th>Alerts</th>
+            <th>Timeline</th>
+            <th>Actions</th>
+            
           </tr>
+
         </thead>
 
         <tbody>
+
           {incidents.length > 0 ? (
+
             incidents.map((inc, index) => (
+
               <tr key={index}>
-                <td>{inc._id}</td>
 
-                <td
-                  className="ip-link"
-                  onClick={() => navigate(`/investigation/${inc.ip}`)}
-                >
-                  {inc.ip}
-                </td>
-
-                <td>{inc.attack_types.join(", ")}</td>
-
-                <td className={getSeverityClass(inc.severity)}>
-                  {inc.severity}
-                </td>
-
-                <td
-                  className={
-                    inc.status === "OPEN" ? "status-open" : "status-closed"
-                  }
-                >
-                  {inc.status === "OPEN" ? "🔴 OPEN" : "🟢 CLOSED"}
-                </td>
-
-                <td>{inc.alert_count}</td>
-                <td>{inc.first_seen}</td>
-                <td>{inc.last_seen}</td>
+                {/* Incident ID */}
 
                 <td>
-                  {inc.status === "OPEN" && (
-                    <>
+                  <div className="incident-id">
+                    #{inc._id}
+                  </div>
+                </td>
+
+                {/* IP */}
+
+                <td>
+
+                  <span
+                    className="ip-link"
+                    onClick={() =>
+                      navigate(
+                        `/investigation/${inc.ip}`
+                      )
+                    }
+                  >
+                    {inc.ip}
+                  </span>
+
+                </td>
+
+                {/* Attack Types */}
+
+                <td>
+
+                  <div className="attack-tags">
+
+                    {inc.attack_types.map(
+                      (type, idx) => (
+
+                        <span
+                          key={idx}
+                          className="attack-tag"
+                        >
+                          {type}
+                        </span>
+                      )
+                    )}
+
+                  </div>
+
+                </td>
+
+                {/* Severity */}
+
+                <td>
+
+                  <span
+                    className={`severity-badge ${getSeverityClass(
+                      inc.severity
+                    )}`}
+                  >
+                    {inc.severity}
+                  </span>
+
+                </td>
+
+                {/* Status */}
+
+                <td>
+
+                  <span
+                    className={
+                      inc.status === "OPEN"
+                        ? "status-badge status-open"
+                        : "status-badge status-closed"
+                    }
+                  >
+                    {inc.status}
+                  </span>
+
+                </td>
+
+                {/* Alert Count */}
+
+                <td>
+
+                  <div className="alert-count">
+                    {inc.alert_count}
+                  </div>
+
+                </td>
+
+                {/* Timeline */}
+
+                <td>
+
+                  <div className="timeline-info">
+
+                    <span>
+                      First:
+                      {" "}
+                      {inc.first_seen}
+                    </span>
+
+                    <span>
+                      Last:
+                      {" "}
+                      {inc.last_seen}
+                    </span>
+
+                  </div>
+
+                </td>
+
+                {/* Actions */}
+
+                <td>
+
+                  {inc.status === "OPEN" ? (
+
+                    <div className="action-buttons">
+
                       <button
                         className="btn btn-close"
-                        onClick={() => closeIncident(inc._id)}
+                        onClick={() =>
+                          closeIncident(inc._id)
+                        }
                       >
                         Close
                       </button>
 
                       <button
                         className="btn btn-block"
-                        onClick={() => blockIP(inc.ip)}
+                        onClick={() =>
+                          blockIP(inc.ip)
+                        }
                       >
-                        Block IP
+                        Block
                       </button>
-                    </>
+
+                    </div>
+
+                  ) : (
+
+                    <span className="resolved-text">
+                      Resolved
+                    </span>
+
                   )}
+
                 </td>
+
               </tr>
             ))
+
           ) : (
+
             <tr>
-              <td colSpan="9">No incidents found</td>
+
+              <td
+                colSpan="8"
+                className="empty-state"
+              >
+                No incidents found
+              </td>
+
             </tr>
+
           )}
+                    {/* add raw logs view button */}
         </tbody>
+
       </table>
+
     </div>
   );
 };

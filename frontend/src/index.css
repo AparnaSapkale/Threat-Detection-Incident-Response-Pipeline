@@ -1,4 +1,58 @@
 
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+  background: #071120;
+  font-family: Inter, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Layout */
+
+.app-layout {
+  display: flex;
+  min-height: 90vh;
+}
+
+/* Main */
+
+.main-layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pages */
+
+.page-content {
+  flex: 1;
+  padding: 18px;
+  overflow-y: auto;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #081221;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f3252;
+  border-radius: 10px;
+}

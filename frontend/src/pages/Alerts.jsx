@@ -1,3 +1,14 @@
+// Given bellow is the code for Alerts.jsx which is currently commented out as we have moved the AlertTable component to components folder for better reusability and separation of concerns. You can refer to the AlertTable.jsx file in components folder for the actual implementation of the alert table which is being used in the Alerts page.
+
+// alerts page functions 
+// 1. which shows all the alerts in a table format with search functionality and auto refresh every 3 seconds
+// 2. clicking on the IP in the alert table will navigate to the investigation page for that IP
+// 3. the alert table will show timestamp, src_IP, Dest_IP, attck type, severity, attack count and risk level for each alert, view (raw logs) button will be added in the actions column in future for each alert which will show the raw logs for that alert in a modal view
+// 4. shows which alerts are new , investigating , open and closed based on the status of the alert in the backend which will be implemented in future
+// 5. also there should be search fuctionality to search for specific IPs , attck types 
+//  take the help of AlertTable component for the implementation of the alert table in the Alerts page , make sure to implement the search functionality and auto refresh functionality in the AlertTable component as well as the navigation to the investigation page on clicking the IP in the alert table and make sure all fuctions as mansion must be implemented in the AlertTable component for better reusability and separation of concerns
+
+/*
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -57,7 +68,7 @@ const AlertTable = () => {
 
   return (
     <div className="table-container">
-      {/* Search Input */}
+      {/* Search Input * /}
       <input
         type="text"
         placeholder="Search by IP..."
@@ -123,3 +134,4 @@ const AlertTable = () => {
 };
 
 export default AlertTable;
+ */

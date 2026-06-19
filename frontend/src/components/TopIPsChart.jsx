@@ -5,7 +5,7 @@ const TopIPsChart = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/top-ips")
+    fetch("http://127.0.0.1:8001/top-ips")
       .then(res => res.json())
       .then(data => setData(data));
   }, []);

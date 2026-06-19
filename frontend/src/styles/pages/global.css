@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background: #071120;
+}
+
+.app-layout {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+}
