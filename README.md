@@ -16,16 +16,14 @@ It focuses on the end-to-end process of threat detection, analysis, and automate
         Generate reports with visual dashboards summarizing daily security events and actions.
         
 🔧 Additional Features
-      Flexible Log Ingestion
-      Supports importing logs from external sources such as CSV, TXT, and other formats.
       Investigation Capabilities
       Enables analysts to perform detailed investigations on detected incidents.
       
  📌 Upcoming Enhancements
-      Add automated playbooks for structured incident response
-      Introduce new alert types for broader threat coverage
-      Provide comprehensive user guidelines for the pipeline
-      Integrate with security tools such as SOAR, EDR, and DSP/ISP platforms to enhance automation and orchestration
+      Add automated playbooks for structured incident response (affected device containment)
+      Introduce new alert types for broader threat coverage 
+      Provide comprehensive user guidelines for the pipeline (How it works)
+      Integrate with security tools such as EDR, SOAR and DSP/ISP platforms to enhance automation and orchestration
 
 ## 📂 Project Structure
 
