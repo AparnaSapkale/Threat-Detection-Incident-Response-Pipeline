@@ -7,6 +7,7 @@ import TopIPsChart from "../components/TopIPsChart";
 import AlertTable from "../components/AlertTable";
 import IncidentTable from "../components/IncidentTable";
 
+
 const Dashboard = () => {
   return (
     <div className="dashboard">
